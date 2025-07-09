@@ -47,5 +47,5 @@ A nostalgic tribute to post-war America and the golden age of newspapers. Great 
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/TheDailyGazette.git
+   git clone https://taherabubaker.github.io/Retro-Coca-Cola-site/
 
