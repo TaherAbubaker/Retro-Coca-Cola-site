@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Daily Gazette | June 12, 1948</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📰</text></svg>">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <button class="night-toggle" id="nightToggle" aria-label="Toggle Night Mode">
+        <i class="fas fa-moon"></i>
+        <span class="tooltip">Toggle Night Mode</span>
+    </button>
+
+    <div class="radio" id="radio" aria-label="Toggle Radio Static">
+        <i class="fas fa-volume-up"></i>
+        <span class="tooltip">Toggle Radio Static</span>
+    </div>
+
+    <div class="news-ticker">
+        <div class="ticker-content" id="ticker">
+            EXTRA! EXTRA! COCA-COLA NOW 5¢ AT ALL PARTICIPATING FOUNTAINS • TRUMAN SIGNS MARSHALL PLAN • HEAT WAVE CONTINUES - COOL OFF WITH AN ICE COLD COKE • LOCAL BOYS RETURN FROM WAR • FIRST POLAROID CAMERA RELEASED • CHEETOS INVENTED IN 1948 • LP RECORD INTRODUCED • FIRST MCDONALD'S OPENS •
+        </div>
+    </div>
+    
+    <div class="fun-fact" id="funFact" role="status" aria-live="polite">📻 Did you know? In 1948, Velcro was patented!</div>
+
+    <main class="newspaper">
+        <div class="masthead">
+            <div class="date-line" id="currentDateLine">Saturday, June 12, 1948</div>
+            <h1 class="newspaper-title">The Daily Gazette</h1>
+            <div class="date-line">Price: Five Cents</div>
+        </div>
+
+        <h2 class="main-headline">TRUMAN SIGNS MARSHALL PLAN</h2>
+        <p class="subhead">President calls European recovery act "bulwark against communism"</p>
+
+        <div class="content-columns">
+            <div class="search-bar">
+                <label for="searchInput">Search the Gazette</label>
+                <input type="text" id="searchInput" placeholder="Type to search..." />
+                <div id="searchFeedback" aria-live="polite"></div>
+            </div>
+
+            <div class="article" id="article1">
+                <h3 class="article-headline">Local Boys Return From Overseas</h3>
+                <p class="article-subhead">Heroes welcomed home after victory in Europe</p>
+                <p class="byline">By JAMES WILKERSON | Gazette Staff Writer</p>
+                
+                <p><span class="drop-cap">T</span>he train station was filled with cheers and tears yesterday as 42 of our boys returned from military service in Europe. The young men, who had been away for nearly three years, were greeted by family members and the Mayor's welcoming committee.</p>
+                
+                <p>"It's good to be home," said Corporal Robert Johnson, one of the returning soldiers. "The first thing I'm going to do is have an ice-cold Coca-Cola at the drugstore."</p>
+                
+                <div class="pull-quote">
+                    "The USO clubs kept us supplied with Coca-Cola throughout the war. It tasted like home."
+                </div>
+                
+                <p>The celebration continued into the evening with a parade down Main Street and a USO-style dance at the community center. Many of the returning servicemen remarked how much the town had changed during their absence.</p>
+            </div>
+
+            <div class="advertisement" id="ad1">
+                <h4 class="ad-title">COCA-COLA REFRESHES YOU BEST</h4>
+                <img src="image1.png" alt="Vintage Coca-Cola ad showing a man enjoying a bottle of Coke." class="ad-image">
+                <p class="ad-caption">The pause that refreshes - now available at your local soda fountain</p>
+                <div class="price-tag">Only 5¢</div>
+                <p>After three years of war-time restrictions, Coca-Cola is now back in full production. The famous contour bottle is once again available at drug stores, soda fountains, and grocery stores across America.</p>
+                <p>Doctors agree: Coca-Cola is a wholesome, delicious beverage that can be enjoyed by the whole family. Its crisp, clean taste comes from the highest quality ingredients.</p>
+            </div>
+
+            <div class="article" id="article2">
+                <h3 class="article-headline">New Factory Brings 200 Jobs</h3>
+                <p class="article-subhead">Electronics plant to open by fall</p>
+                <p class="byline">By MARGARET CARTER | Gazette Business Editor</p>
+                
+                <p><span class="drop-cap">T</span>he new Radiotron electronics factory will begin operations in September, company officials announced yesterday. The plant, which will manufacture radio tubes, is expected to employ nearly 200 local workers.</p>
+                
+                <p>"This is exactly the kind of peacetime industry we need," said Mayor William Peterson at the groundbreaking ceremony. "These are good jobs for our returning veterans and their families."</p>
+                
+                <p>The company plans to install modern amenities including air conditioning and a Coca-Cola vending machine in the employee lounge. "We believe in treating our workers right," said plant manager Charles Whitmore.</p>
+            </div>
+
+            <div class="article" id="article3">
+                <h3 class="article-headline">Heat Wave Continues</h3>
+                <p class="article-subhead">Temperatures hit 98 degrees yesterday</p>
+                <p class="byline">By THOMAS HARRIS | Gazette Weather</p>
+                
+                <p><span class="drop-cap">T</span>he record-breaking heat wave shows no signs of letting up, with yesterday's high temperature reaching 98 degrees at the weather bureau. Doctors advise residents to stay hydrated and avoid strenuous activity during the hottest parts of the day.</p>
+                
+                <div class="pull-quote">
+                    "An ice-cold Coca-Cola is the perfect way to beat the summer heat."
+                </div>
+                
+                <p>Local drugstores report increased sales of cold beverages, particularly Coca-Cola and ice cream sodas. "We're going through five cases of Coke a day," said Sam Wilson, owner of Wilson's Pharmacy on Main Street.</p>
+                
+                <p>The weather service predicts similar temperatures for the next several days, with possible relief coming next week.</p>
+            </div>
+
+            <div class="advertisement" id="ad2">
+                <h4 class="ad-title">MEET FRIENDS AT THE SODA FOUNTAIN</h4>
+                <img src="image.png" alt="A vintage Coca-Cola soda fountain with people enjoying drinks." class="ad-image">
+                <p class="ad-caption">Enjoy Coca-Cola the way it was meant to be served - ice cold!</p>
+                <p>Nothing beats the heat like an ice-cold Coca-Cola served at your local soda fountain. The perfect blend of crisp, refreshing flavor served in a frosty glass.</p>
+                <p>Try these delicious combinations:</p>
+                <ul>
+                    <li>Coca-Cola with a squeeze of fresh lime</li>
+                    <li>Chocolate Coke (with a scoop of ice cream)</li>
+                    <li>Traditional Coke float (vanilla ice cream)</li>
+                </ul>
+                <div class="price-tag">All drinks 10¢</div>
+            </div>
+
+            <div class="article" id="article4">
+                <h3 class="article-headline">Little League Season Opens</h3>
+                <p class="article-subhead">Roosevelt Park field dedicated to war heroes</p>
+                <p class="byline">By JOHNNY BAKER | Gazette Sports</p>
+                
+                <p><span class="drop-cap">T</span>he 1948 Little League season opened yesterday with a ceremony honoring local servicemen who gave their lives in the recent war. The newly renovated Roosevelt Park field was officially renamed "Heroes Field" before the first pitch.</p>
+                
+                <p>The Coca-Cola Bottling Company has signed on as this year's sponsor, providing uniforms for all six teams and cold drinks for every game. "We're proud to support our community's youth," said company president Harold Thompson.</p>
+                
+                <p>The opening game saw the Tigers defeat the Dodgers 7-3 in a thrilling match that went into extra innings. After the game, players celebrated with ice-cold Coca-Colas provided by the league.</p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>The Daily Gazette | Established 1872 | "All the News That's Fit to Print"</p>
+            <p>Coca-Cola® is a registered trademark of The Coca-Cola Company</p>
+            <p>Created by Your Name Here (or leave as is)</p>
+        </div>
+    </main>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalHeadline">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal" role="button" aria-label="Close modal">&times;</span>
+            <div id="modalContent"></div>
+            <button class="read-more-button" id="readMoreBtn">Read More on archive.org</button>
+        </div>
+    </div>
+
+    <audio id="radioJingle" src="https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTgzMzg1ODM3_JzthsfvUY24.MP3" preload="auto"></audio>
+    <audio id="typewriterSound" src="https://www.soundjay.com/mechanical/sounds/typewriter-01.mp3" preload="auto"></audio>
+    <audio id="newspaperSound" src="https://www.soundjay.com/mechanical/sounds/newspaper-01.mp3" preload="auto"></audio>
+    <audio id="radioStatic" src="https://www.soundjay.com/noise/sounds/static-noise-01.mp3" loop preload="auto"></audio>
+    <script src="js.js"></script>
+</body>
+</html>

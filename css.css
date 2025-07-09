@@ -1,0 +1,592 @@
+
+        /* Import Old English Text MT from cdnfonts.com */
+        @import url('https://fonts.cdnfonts.com/css/old-english-text-mt');
+
+        /* === BASE STYLES === */
+        :root {
+            --paper: #f5e7d0;
+            --ink: #2a2118;
+            --coke-red: #d40000;
+            --headline: 'Times New Roman', serif;
+            --body: 'Georgia', serif;
+            --button-bg: var(--ink);
+            --button-color: white;
+            --button-shadow: rgba(0,0,0,0.3);
+        }
+
+        body {
+            background-color: #d9c7a7;
+            color: var(--ink);
+            font-family: var(--body);
+            line-height: 1.5;
+            padding: 2rem 0;
+            margin: 0;
+            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
+            transition: all 0.5s ease;
+        }
+
+        /* === NEWSPAPER LAYOUT === */
+        .newspaper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem;
+            border: 1px solid var(--ink);
+            box-shadow: 0 0 30px rgba(0,0,0,0.3);
+            background-color: var(--paper);
+            position: relative;
+            transform-origin: top center;
+            transition: transform 0.3s ease;
+        }
+
+        .newspaper:hover {
+            transform: rotate(0.5deg);
+        }
+
+        /* Newspaper paper overlay for texture */
+        .newspaper::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(
+                rgba(245, 231, 208, 0.8),
+                rgba(245, 231, 208, 0.2) 50%,
+                rgba(245, 231, 208, 0.8)
+            );
+            pointer-events: none; /* Allows clicks to pass through */
+        }
+
+        /* === MASTHEAD === */
+        .masthead {
+            border-bottom: 3px double var(--ink);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .date-line {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .newspaper-title {
+            font-family: 'OldEnglish', 'Old English Text MT', 'Times New Roman', serif;
+            font-size: 4rem;
+            margin: 0;
+            line-height: 1;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .newspaper-title:hover {
+            color: var(--coke-red);
+            text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
+        }
+
+        /* === HEADLINES === */
+        .main-headline {
+            font-family: var(--headline);
+            font-size: 2.8rem;
+            color: var(--coke-red);
+            text-align: center;
+            margin: 2rem 0 1rem;
+            font-weight: bold;
+            line-height: 1.2;
+            border-top: 1px solid var(--ink);
+            border-bottom: 1px solid var(--ink);
+            padding: 1rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-headline::after {
+            content: "BREAKING NEWS";
+            position: absolute;
+            top: -10px;
+            right: -30px;
+            background: var(--coke-red);
+            color: white;
+            font-size: 0.8rem;
+            padding: 0.2rem 2rem;
+            transform: rotate(25deg);
+            box-shadow: 0 0 5px rgba(0,0,0,0.3);
+            animation: flash 1.5s infinite alternate; /* Added flash animation */
+        }
+
+        .subhead {
+            font-family: var(--headline);
+            font-size: 1.3rem;
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        /* === CONTENT COLUMNS === */
+        .content-columns {
+            column-count: 3;
+            column-gap: 2rem;
+            column-rule: 1px solid var(--ink);
+            margin-bottom: 2rem;
+        }
+
+        /* === ARTICLE STYLES === */
+        .article {
+            break-inside: avoid; /* Prevents article from breaking across columns */
+            margin-bottom: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .article:hover {
+            background: rgba(255,255,255,0.05); /* Lighter hover effect */
+        }
+
+        .article-headline {
+            font-family: var(--headline);
+            font-size: 1.5rem;
+            margin: 1rem 0 0.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .article-headline:hover {
+            color: var(--coke-red);
+            text-decoration: underline;
+        }
+
+        .article-subhead {
+            font-family: var(--headline);
+            font-size: 1rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .byline {
+            font-size: 0.8rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .drop-cap {
+            float: left;
+            font-family: var(--headline);
+            font-size: 3.5rem;
+            line-height: 0.8;
+            padding-right: 0.3rem;
+            color: var(--coke-red);
+            transition: all 0.3s ease;
+        }
+
+        .article:hover .drop-cap {
+            transform: scale(1.1);
+            text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
+        }
+
+        /* Search result highlight */
+        .highlight {
+            background-color: yellow;
+            color: black;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+
+        /* === ADVERTISEMENTS === */
+        .advertisement {
+            background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+            border: 2px solid var(--ink);
+            padding: 1rem;
+            margin: 1.5rem 0;
+            break-inside: avoid;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            cursor: pointer; /* Indicate clickability */
+        }
+
+        .advertisement:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .ad-title {
+            font-family: var(--headline);
+            font-size: 1.8rem;
+            color: var(--coke-red);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .ad-image {
+            width: 100%;
+            height: auto; /* Ensure image scales correctly */
+            display: block; /* Remove extra space below image */
+            margin: 0.5rem 0;
+            border: 1px solid var(--ink);
+            transition: all 0.5s ease;
+        }
+
+        .ad-image:hover {
+            transform: scale(1.02);
+        }
+
+        .ad-caption {
+            font-size: 0.8rem;
+            text-align: center;
+            font-style: italic;
+            margin: 0.5rem 0;
+        }
+
+        .price-tag {
+            background: var(--paper);
+            border: 1px solid var(--ink);
+            padding: 0.2rem 0.5rem;
+            font-family: var(--headline);
+            font-weight: bold;
+            display: inline-block;
+            margin: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .advertisement:hover .price-tag {
+            background: var(--coke-red);
+            color: white;
+        }
+
+        /* === FOOTER === */
+        .footer {
+            border-top: 3px double var(--ink);
+            padding-top: 1rem;
+            font-size: 0.8rem;
+            text-align: center;
+            column-span: all; /* Make footer span all columns */
+        }
+
+        /* === SPECIAL ELEMENTS === */
+        .fun-fact {
+            text-align: center;
+            background: var(--coke-red);
+            color: white;
+            font-weight: bold;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background 0.3s ease;
+        }
+
+        .pull-quote {
+            font-family: var(--headline);
+            font-size: 1.2rem;
+            color: var(--coke-red);
+            border-left: 3px solid var(--ink);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            font-style: italic;
+            break-inside: avoid;
+            transition: all 0.3s ease;
+        }
+
+        .pull-quote:hover {
+            background: rgba(212, 0, 0, 0.1);
+            border-left: 3px solid var(--coke-red);
+        }
+
+        .photo-caption {
+            font-size: 0.7rem;
+            text-align: center;
+            font-style: italic;
+            margin-top: -0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--ink);
+            margin: 1.5rem 0;
+        }
+
+        /* === INTERACTIVE ELEMENTS === */
+        .radio, .night-toggle {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            background: var(--coke-red);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--button-shadow);
+            z-index: 1000; /* Ensure it's above other content */
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255,255,255,0.3); /* Subtle border */
+        }
+
+        .radio:hover, .night-toggle:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--button-shadow);
+        }
+
+        .radio {
+            bottom: 20px;
+            left: 20px;
+            z-index: 1001; /* Radio slightly above ticker */
+        }
+
+        .radio i {
+            font-size: 1.5rem;
+        }
+
+        .night-toggle {
+            top: 20px;
+            right: 20px;
+            background: var(--ink);
+            z-index: 1002; /* Toggle above radio and ticker */
+        }
+
+        /* Night Mode Styles */
+        body.night-mode {
+            --paper: #2c2a26;
+            --ink: #f5e7d0;
+            --coke-red: #ff4a4a;
+            background-color: #1f1d1a;
+            --button-shadow: rgba(255,255,255,0.2);
+        }
+        body.night-mode .advertisement {
+            background: rgba(0, 0, 0, 0.5); /* Darker ads in night mode */
+        }
+        body.night-mode .highlight {
+            background-color: #ffd700; /* Gold highlight in night mode */
+            color: var(--ink);
+        }
+
+        .search-bar {
+            text-align: center;
+            margin-bottom: 2rem;
+            column-span: all; /* Make search bar span all columns */
+        }
+
+        .search-bar label {
+            display: none; /* Hide label, placeholder provides context */
+        }
+
+        .search-bar input {
+            padding: 0.7rem 1.2rem;
+            width: 80%; /* Wider search bar */
+            max-width: 500px;
+            border: 2px solid var(--ink);
+            font-family: var(--body);
+            font-size: 1rem;
+            background-color: var(--paper);
+            color: var(--ink);
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: var(--coke-red);
+            box-shadow: 0 0 0 3px rgba(212, 0, 0, 0.2);
+        }
+
+        #searchFeedback {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--ink);
+            min-height: 1.5rem; /* Reserve space */
+        }
+
+        .news-ticker {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--ink);
+            color: white;
+            padding: 0.5rem;
+            font-family: var(--headline);
+            overflow: hidden;
+            z-index: 999;
+            white-space: nowrap; /* Keep content on one line */
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 60s linear infinite; /* Increased speed for more content */
+            padding-right: 2em; /* Spacing between duplicated content */
+        }
+
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 1001;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem; /* Padding for small screens */
+        }
+
+        .modal-content {
+            background: var(--paper);
+            padding: 2rem;
+            max-width: 600px;
+            max-height: 90vh; /* Increased max-height */
+            overflow-y: auto;
+            border: 3px solid var(--ink);
+            position: relative;
+            animation: modalFadeIn 0.3s ease-out; /* Faster modal animation */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .modal-content h3, .modal-content h4 {
+            color: var(--coke-red); /* Headlines in modal retain red color */
+        }
+
+        .read-more-button {
+            display: block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--coke-red);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: var(--body);
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more-button:hover {
+            background-color: #a00000;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 2rem; /* Larger close button */
+            color: var(--ink);
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--coke-red);
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes flash {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        /* Tooltip styles */
+        .tooltip {
+            position: absolute;
+            bottom: 100%; /* Position above the button */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--ink);
+            color: white;
+            padding: 0.5rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            pointer-events: none; /* Allows clicks to pass through */
+            margin-bottom: 10px; /* Space between button and tooltip */
+            z-index: 1003; /* Above buttons */
+        }
+
+        .radio:hover .tooltip,
+        .night-toggle:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+
+        /* === PRINT STYLES === */
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .newspaper {
+                box-shadow: none;
+                border: none;
+                padding: 1rem; /* Add some margin for print */
+                margin: 1cm auto; /* Centered with print margins */
+            }
+            .radio, .news-ticker, .night-toggle, .search-bar, .fun-fact {
+                display: none !important; /* Hide interactive elements from print */
+            }
+            .content-columns {
+                column-count: 2; /* Adjust columns for print if needed */
+                column-gap: 1.5rem;
+            }
+            .main-headline::after {
+                display: none; /* Hide breaking news ribbon in print */
+            }
+        }
+
+        /* === MEDIA QUERIES === */
+        @media screen and (max-width: 768px) {
+            .content-columns {
+                column-count: 1;
+                padding: 0 1rem; /* Add horizontal padding for smaller screens */
+            }
+            .newspaper {
+                padding: 1.5rem;
+            }
+            .radio, .night-toggle {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 15px;
+                left: 15px;
+                top: auto; /* Ensure night toggle is at the bottom for small screens */
+                right: 15px;
+            }
+            .radio i, .night-toggle i {
+                font-size: 1.2rem;
+            }
+            .newspaper-title {
+                font-size: 3rem;
+            }
+            .main-headline {
+                font-size: 2rem;
+                padding: 0.8rem 0;
+            }
+            .subhead {
+                font-size: 1.1rem;
+            }
+            .search-bar input {
+                width: 90%;
+            }
+        }
